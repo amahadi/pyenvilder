@@ -8,6 +8,7 @@ $ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 $ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 $ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 $ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+exec "$SHELL"
 ```
 ### Installing Necessary Dependencies
 There are some libraries that is needed to perform various tasks. `tkinter` is one of the libraries that is a dependency of `matplotlib` which is used for plotting various distributions. We have to install these dependencies before building our python. Simply running the following code should do it.
