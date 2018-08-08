@@ -14,6 +14,7 @@ There are some libraries that is needed to perform various tasks. `tkinter` is o
 ```
 $ sudo apt-get install python-tk python3-tk tk-dev
 ```
+Install the necessary dependencies that you need before and/or after your python build.
 ### Install python using pyenv
 pyenv provides commands to install various versions of python. I would reccomend to use python 3.7.0. This tutorial is shown using python 3.7.0. To install python 3.7.0, execute
 ```
