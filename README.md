@@ -23,10 +23,28 @@ We need to make this version global so that this version can be accessible anywh
 ```
 $ pyenv global 3.7.0
 ```
+Now you will see by running `$ python -V`, it return `Python 3.7.0` as python 3.7.0 is set to be global and executable anywhere in the system.
 To know more about pyenv and how it works, visit [Github page of pyenv](https://github.com/pyenv/pyenv)
 ### Install virtualenv
 `virtualenv` is a very convenient tool to create an isolated python environment. All the libraries and dependencies can be packaged together in a folder that is totally independent from the global environment. Also this environment can be activated and deactivated when needed. Installing the `virtualenv` is as easy as running the following command.
 ```
 $ sudo pip install virtualenv
 ```
- 
+### Create custom environment using virtualenv
+Creating a virtual environment using virtualenv is very straight forward. 
+- First create a directory for the environment that will packate the while virtual environment including dependencies.
+```
+$ mkdir Environments/pyenvilder
+```
+Name the directory whatever you want instead of `pyenvilder`
+- Now run the following command to create a virtual environment named anything you want eg. pyenvilder.
+```
+$ virtualenv ~/Environments/pyenvilder/
+```
+You can see that, this installs pip and wheel in that directory.
+- Now execute the following command to `activate` this environment.
+```
+$ source ~/Environments/pyenvilder/bin/activate
+```
+You can see that there is a `(pyenvilder)` written before the username of your terminal. It indicates you that, the virtual environment `pyenvilder` is running.
+- To deactivate this environment simply run `deactivate`. You can see that the `(pyenvilder)` would have gone.
