@@ -14,7 +14,6 @@ There are some libraries that is needed to perform various tasks. `tkinter` is o
 ```
 $ sudo apt-get install python-tk python3-tk tk-dev
 ```
-
 ### Install python using pyenv
 pyenv provides commands to install various versions of python. I would reccomend to use python 3.7.0. This tutorial is shown using python 3.7.0. To install python 3.7.0, execute
 ```
@@ -25,4 +24,9 @@ We need to make this version global so that this version can be accessible anywh
 $ pyenv global 3.7.0
 ```
 To know more about pyenv and how it works, visit [Github page of pyenv](https://github.com/pyenv/pyenv)
+### Install virtualenv
+`virtualenv` is a very convenient tool to create an isolated python environment. All the libraries and dependencies can be packaged together in a folder that is totally independent from the global environment. Also this environment can be activated and deactivated when needed. Installing the `virtualenv` is as easy as running the following command.
+```
+$ sudo pip install virtualenv
+```
  
