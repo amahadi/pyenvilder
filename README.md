@@ -50,3 +50,16 @@ You can see that there is a `(pyenvilder)` written before the username of your t
 - To deactivate this environment simply run `deactivate`. You can see that the `(pyenvilder)` would have gone.
 
 To know more about different stuffs about virtualenv, visit their [Official Page](https://virtualenv.pypa.io/en/stable/installation/)
+### Some Observations
+Not that you have successfully completed all the steps above(Which is a lot!!! :sweat:), let's talk why we took so much trouble to do all this things instead installing python using just `$ sudo apt-get install python3`. It will get much clearer by going through the following scenarios:
+#### Scenario #1
+Suppose you are a python web developer. You use `django` or `Flask` for your web development. Now, you have done lets say, Project_A with python version 3.6.0, so you have python 3.6.0 installed in your local workstation. Now you are required to do an project lets say Project_X in python 3.7.0 but you also have to give some support to Project_A, what should you do? Should you uninstall python 3.6.0 and install 3.7.0 for Project_X? It's a bad idea because Project_A may break in the newer version of python. Also it's not quite possible to upgrade Project_A. The solution is `pyenv`. You can assign different versions of python using pyenv. To demostrate this, let us install another version of `python` using `pyenv`. ***Remember to deactivate the virtualenv.***
+```
+$ pyenv install 3.6.0
+```
+Now let us make two directory from Project_A and Project_X
+```
+$ mkdir Project_A
+$ mkdir Project_X
+```
+Now `cd` to Project_A and run `$ python -V`. The command will return `Python 3.7.0` as python 3.7.0 is set as global. Now run `$ pyenv local 3.6.0`. Now checking the version by `$ python -V` will return `Python 3.6.0`. This directory will now use python 3.6.0. Similarly, if you cd into Project_X, you will find that the python version 3.7.0 is set for this directory. So you can now work on python 3.6.0 in Project_A while you can work in python 3.7.0 in Project_X. It's that convenient.
