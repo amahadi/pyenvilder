@@ -63,3 +63,32 @@ $ mkdir Project_A
 $ mkdir Project_X
 ```
 Now `cd` to Project_A and run `$ python -V`. The command will return `Python 3.7.0` as python 3.7.0 is set as global. Now run `$ pyenv local 3.6.0`. Now checking the version by `$ python -V` will return `Python 3.6.0`. This directory will now use python 3.6.0. Similarly, if you cd into Project_X, you will find that the python version 3.7.0 is set for this directory. So you can now work on python 3.6.0 in Project_A while you can work in python 3.7.0 in Project_X. It's that convenient.
+#### Scenario #2
+Handling dependencies can be a real pain. One dependency can have other dependencies. Much works have been done to manage dependencies. But the versioning problem of dependencies can be a serious problem. Suppose, you need a library named `n` which depends on `m 1.2`. But you have an updated version of `m` let's say `m 2.1`. If you use `m 2.1`, your required library named `n` may not work properly if not work at all. This problem can be solved by using virtual environments using virtualenv. Let's see it working....
+We have a virtual environment named `pyenvilder` that we built earlier. Let's run it one more time using `$ source ~/Environments/pyenvilder/bin/activate`. Now let us install `matplotlib` by using `pip` running `$ pip install matplotlib`. Now lets run `pip list`. We will find something like the following:
+```
+Package                       Version
+----------------------------- -------
+backports.functools-lru-cache 1.5    
+cycler                        0.10.0 
+kiwisolver                    1.0.1  
+matplotlib                    2.2.2  
+numpy                         1.15.0 
+pip                           18.0   
+pyparsing                     2.2.0  
+python-dateutil               2.7.3  
+pytz                          2018.5 
+setuptools                    40.0.0 
+six                           1.11.0 
+subprocess32                  3.5.2  
+wheel                         0.31.1
+```
+We can find `matplotlib` installed in the list.
+Now let's get out of the virtual environment by using `$ deactivate`. We are now in system environment set by `pyenv`. Now running `$ pip list` will yeild the following result:
+```
+Package    Version
+---------- -------
+pip        10.0.1 
+setuptools 39.0.1
+```
+We can clearly see that, there is no `matplotlib` installed in this environment. We can build as many virtual environments as we want as per our requirements and needs. This is the beauty of using `virtualenv`.
