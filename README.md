@@ -48,3 +48,5 @@ $ source ~/Environments/pyenvilder/bin/activate
 ```
 You can see that there is a `(pyenvilder)` written before the username of your terminal. It indicates you that, the virtual environment `pyenvilder` is running.
 - To deactivate this environment simply run `deactivate`. You can see that the `(pyenvilder)` would have gone.
+
+To know more about different stuffs about virtualenv, visit their [Official Page](https://virtualenv.pypa.io/en/stable/installation/)
