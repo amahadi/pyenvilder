@@ -9,6 +9,12 @@ $ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 $ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 $ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 ```
+### Installing Necessary Dependencies
+There are some libraries that is needed to perform various tasks. `tkinter` is one of the libraries that is a dependency of `matplotlib` which is used for plotting various distributions. We have to install these dependencies before building our python. Simply running the following code should do it.
+```
+$ sudo apt-get install python-tk python3-tk tk-dev
+```
+
 ### Install python using pyenv
 pyenv provides commands to install various versions of python. I would reccomend to use python 3.7.0. This tutorial is shown using python 3.7.0. To install python 3.7.0, execute
 ```
@@ -19,3 +25,4 @@ We need to make this version global so that this version can be accessible anywh
 $ pyenv global 3.7.0
 ```
 To know more about pyenv and how it works, visit [Github page of pyenv](https://github.com/pyenv/pyenv)
+ 
