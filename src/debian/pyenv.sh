@@ -14,6 +14,10 @@ if [ "$(grep -c "if command -v pyenv 1>/dev/null 2>&1; then" ~/.bashrc)" -eq 0 ]
 	echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc	
 fi	
 
-source ~/.bashrc		
-
-echo "$(pyenv -v) installed"
+while : ; do
+	source ~/.bashrc
+	if [ $? -eq 0 ]; then
+		echo "$(pyenv -v) installed"
+		break
+	fi
+done
