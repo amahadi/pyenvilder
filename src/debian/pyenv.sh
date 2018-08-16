@@ -17,7 +17,7 @@ fi
 while : ; do
 	source ~/.bashrc
 	if [ $? -eq 0 ]; then
-		# echo "$(pyenv -v) installed"
+		echo "$(pyenv -v) installed"
 		break
 	fi
 done
