@@ -111,3 +111,11 @@ pip        10.0.1
 setuptools 39.0.1
 ```
 We can clearly see that, there is no `matplotlib` installed in this environment. We can build as many virtual environments as we want as per our requirements and needs. This is the beauty of using `virtualenv`.
+## Used Libraries
+* [pyenv](https://github.com/pyenv/pyenv)
+* [virtualenv](https://virtualenv.pypa.io/en/stable/installation/)
+## Author
+* ***Alvi Mahadi*** - Owner - [alvi](alvi2496@github.io)
+* ***indrajit*** - Advisor, Mentor, Contributor - [eendroroy](https://github.com/eendroroy)
+## License
+The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
