@@ -1,5 +1,6 @@
 # Python Environment Builder
 ## One command installation
+#### This one command installation only supports ubuntu and bashrc for now
 If you choose to use this option, I would still recommend you to read the whole thing to understand what's happening. After you've read it, you can just clone this repo by 
 ```
 $ git clone https://github.com/alvi2496/pyenvilder.git ~/pyenvilder
