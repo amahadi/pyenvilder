@@ -10,8 +10,8 @@ if [ "$(grep -c "export PATH=\"\$PYENV_ROOT/bin:\$PATH\"" ~/.bashrc)" -eq 0 ]; t
 	echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 fi	
 
-if [ "$(grep -c "if command -v pyenv 1>/dev/null 2>&1; then" ~/.bashrc)" -eq 0 ]; then
-	echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc	
+if [ "$(grep -c "eval \"\$(pyenv init -)\"" ~/.bashrc)" -eq 0 ]; then
+	echo 'eval "$(pyenv init -)"' >> ~/.bashrc	
 fi	
 
 while : ; do

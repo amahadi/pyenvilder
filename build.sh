@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -i
 
 PYENVILDER_PATH=`pwd`
 
@@ -12,20 +12,18 @@ do
 done
 
 for i in {1..10}; do 
-	bash $PYENVILDER_PATH/src/debian/pyenv.sh
+	. $PYENVILDER_PATH/src/debian/pyenv.sh
 	if [ $? -eq 0 ]; then
 
 		pyenv install $VERSION
 
-		if [ ! -d ~/pyvirenvs ]; then
-			mkdir ~/pyvirenvs
-		fi	
+		mkdir -p ~/pyvirenvs
 
 		cd ~/pyvirenvs
 		pyenv local $VERSION
 
 		for j in {1..10}; do
-			bash $PYENVILDER_PATH/src/debian/virtualenv.sh $VENV_NAME
+			. $PYENVILDER_PATH/src/debian/virtualenv.sh $VENV_NAME
 			if [ $? -eq 0 ]; then
 				break
 			fi

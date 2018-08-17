@@ -1,6 +1,6 @@
 VENV_NAME=$1
 VENV_PATH=~/pyvirenvs/$VENV_NAME
-mkdir $VENV_PATH
+mkdir -p $VENV_PATH
 if [ $? -eq 0 ]; then
 	pip install virtualenv
 	virtualenv $VENV_PATH
