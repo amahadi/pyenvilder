@@ -1,16 +1,17 @@
 # Python Environment Builder
 ## One command installation
-#### This one command installation only supports ubuntu and bashrc for now
+##### This one command installation only supports ubuntu and bashrc for now
+##### This installation depends on *build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev*. These dependencies will be installed automatically if not found during installation. 
 If you choose to use this option, I would still recommend you to read the whole thing to understand what's happening. After you've read it, you can just clone this repo by 
-```
+```shell
 $ git clone https://github.com/alvi2496/pyenvilder.git ~/pyenvilder
 ```
 After cloning, just `cd ~/pyenvilder` and run `build.sh` file using
-```
+```shell
 ./build.sh -v <python_version> -n <environment_name>
 ```
 There are two options that have to be passed using `-v` and `-n` flags. `-v` represents the python version you want to use and `-n` denotes the name that you want your virtual environment to give. For example: 
-```
+```shell
 ./build.sh -v 3.7.0 -n data_mining
 ```
 Follow the instruction after installation to activate your virtual environment. Simply type `deactivate` to deactivate it.
@@ -19,7 +20,7 @@ And you are all done. Simple!!! :grin:
 This documentation demostrate a very flexible way to install python distribution in the local machine. This way of installation allows user to switch beetween various versions of python more conveniently and create different python environment with different dependencies. Also this method solves [This issue with matplotlib and pyenv.](https://github.com/pyenv/pyenv-virtualenv/issues/140) So, let's get started........ :grin:
 ### Install pyenv
 pyenv is a very efficient tool to install multiple versions of python and let you switch between different version of python for various projects. Without pyenv, it is possible to install only one version of python2 and python3. pyenv allows user to install for exampele: 2.2.3 and 2.2.4 and 3.5.6 and 3.7.0 at the same time. Also you can switch between 3.5.6 and 3.7.0 according to your needs. ***The following commands will do the trick***
-```
+```shell
 $ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 $ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 $ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
@@ -28,40 +29,40 @@ $ exec "$SHELL"
 ```
 ### Installing Necessary Dependencies
 There are some libraries that is needed to perform various tasks. `tkinter` is one of the libraries that is a dependency of `matplotlib` which is used for plotting various distributions. We have to install these dependencies before building our python. Simply running the following code should do it.
-```
+```shell
 $ sudo apt-get install python-tk python3-tk tk-dev
 ```
 Install the necessary dependencies that you need before and/or after your python build.
 ### Install python using pyenv
 pyenv provides commands to install various versions of python. I would reccomend to use python 3.7.0. This tutorial is shown using python 3.7.0. To install python 3.7.0, execute
-```
+```shell
 $ pyenv install 3.7.0
 ```
 We need to make this version global so that this version can be accessible anywhere in the system. To do that, execute
-```
+```shell
 $ pyenv global 3.7.0
 ```
 Now you will see by running `$ python -V`, it return `Python 3.7.0` as python 3.7.0 is set to be global and executable anywhere in the system.
 To know more about pyenv and how it works, visit [Github page of pyenv](https://github.com/pyenv/pyenv)
 ### Install virtualenv
 `virtualenv` is a very convenient tool to create an isolated python environment. All the libraries and dependencies can be packaged together in a folder that is totally independent from the global environment. Also this environment can be activated and deactivated when needed. Installing the `virtualenv` is as easy as running the following command.
-```
+```shell
 $ sudo pip install virtualenv
 ```
 ### Create custom environment using virtualenv
 Creating a virtual environment using virtualenv is very straight forward. 
 - First create a directory for the environment that will packate the while virtual environment including dependencies.
-```
+```shell
 $ mkdir Environments/pyenvilder
 ```
 Name the directory whatever you want instead of `pyenvilder`
 - Now run the following command to create a virtual environment named anything you want eg. pyenvilder.
-```
+```shell
 $ virtualenv ~/Environments/pyenvilder/
 ```
 You can see that, this installs pip and wheel in that directory.
 - Now execute the following command to `activate` this environment.
-```
+```shell
 $ source ~/Environments/pyenvilder/bin/activate
 ```
 You can see that there is a `(pyenvilder)` written before the username of your terminal. It indicates you that, the virtual environment `pyenvilder` is running.
@@ -72,11 +73,11 @@ To know more about different stuffs about virtualenv, visit their [Official Page
 Now that you have successfully completed all the steps above(Which is a lot!!! :sweat:), let's talk why we took so much trouble to do all this things instead installing python using just `$ sudo apt-get install python3`. It will get much clearer by going through the following scenarios:
 #### Scenario #1
 Suppose you are a python web developer. You use `django` or `Flask` for your web development. Now, you have done lets say, Project_A with python version 3.6.0, so you have python 3.6.0 installed in your local workstation. Now you are required to do an project lets say Project_X in python 3.7.0 but you also have to give some support to Project_A, what should you do? Should you uninstall python 3.6.0 and install 3.7.0 for Project_X? It's a bad idea because Project_A may break in the newer version of python. Also it's not quite possible to upgrade Project_A. The solution is `pyenv`. You can assign different versions of python using pyenv. To demostrate this, let us install another version of `python` using `pyenv`. ***Remember to deactivate the virtualenv.***
-```
+```shell
 $ pyenv install 3.6.0
 ```
 Now let us make two directory from Project_A and Project_X
-```
+```shell
 $ mkdir Project_A
 $ mkdir Project_X
 ```
