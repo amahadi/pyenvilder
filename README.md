@@ -1,5 +1,20 @@
 # Python Environment Builder
-## Documentation to build flexible and scalable python environment
+## One command installation
+If you choose to use this option, I would still recommend you to read the whole thing to understand what's happening. After you've read it, you can just clone this repo by 
+```
+$ git clone https://github.com/alvi2496/pyenvilder.git ~/pyenvilder
+```
+After cloning, just `cd ~/pyenvilder` and run `build.sh` file using
+```
+./build.sh -v <python_version> -n <environment_name>
+```
+There are two options that have to be passed using `-v` and `-n` flags. `-v` represents the python version you want to use and `-n` denotes the name that you want your virtual environment to give. For example: 
+```
+./build.sh -v 3.7.0 -n data_mining
+```
+Follow the instruction after installation to activate your virtual environment. Simply type `deactivate` to deactivate it.
+And you are all done. Simple!!! :grin:
+## Documentation to manually build flexible and scalable python environment
 This documentation demostrate a very flexible way to install python distribution in the local machine. This way of installation allows user to switch beetween various versions of python more conveniently and create different python environment with different dependencies. Also this method solves [This issue with matplotlib and pyenv.](https://github.com/pyenv/pyenv-virtualenv/issues/140) So, let's get started........ :grin:
 ### Install pyenv
 pyenv is a very efficient tool to install multiple versions of python and let you switch between different version of python for various projects. Without pyenv, it is possible to install only one version of python2 and python3. pyenv allows user to install for exampele: 2.2.3 and 2.2.4 and 3.5.6 and 3.7.0 at the same time. Also you can switch between 3.5.6 and 3.7.0 according to your needs. ***The following commands will do the trick***
