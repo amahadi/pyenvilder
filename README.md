@@ -53,7 +53,7 @@ You can see that there is a `(pyenvilder)` written before the username of your t
 
 To know more about different stuffs about virtualenv, visit their [Official Page](https://virtualenv.pypa.io/en/stable/installation/)
 ### Some Observations
-Not that you have successfully completed all the steps above(Which is a lot!!! :sweat:), let's talk why we took so much trouble to do all this things instead installing python using just `$ sudo apt-get install python3`. It will get much clearer by going through the following scenarios:
+Now that you have successfully completed all the steps above(Which is a lot!!! :sweat:), let's talk why we took so much trouble to do all this things instead installing python using just `$ sudo apt-get install python3`. It will get much clearer by going through the following scenarios:
 #### Scenario #1
 Suppose you are a python web developer. You use `django` or `Flask` for your web development. Now, you have done lets say, Project_A with python version 3.6.0, so you have python 3.6.0 installed in your local workstation. Now you are required to do an project lets say Project_X in python 3.7.0 but you also have to give some support to Project_A, what should you do? Should you uninstall python 3.6.0 and install 3.7.0 for Project_X? It's a bad idea because Project_A may break in the newer version of python. Also it's not quite possible to upgrade Project_A. The solution is `pyenv`. You can assign different versions of python using pyenv. To demostrate this, let us install another version of `python` using `pyenv`. ***Remember to deactivate the virtualenv.***
 ```
