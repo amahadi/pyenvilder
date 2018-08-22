@@ -20,7 +20,10 @@ for i in {1..10}; do
 		mkdir -p ~/pyvirenvs
 
 		cd ~/pyvirenvs
+
 		pyenv local $VERSION
+
+		sudo apt-get install tcl-dev tk-dev python-tk python3-tk
 
 		for j in {1..10}; do
 			. $PYENVILDER_PATH/src/debian/virtualenv.sh $VENV_NAME
