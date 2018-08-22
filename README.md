@@ -1,7 +1,7 @@
 # Python Environment Builder
 ## One command installation
 ##### This one command installation only supports ubuntu and bashrc for now
-##### This installation depends on *build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev*. These dependencies will be installed automatically if not found during installation. 
+##### This installation depends on *build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev*. Also *tcl-dev python-tk python3-tk* are installed to support `matplotlib` backend to use `TkAgg` to display graphical elements like plotting. These dependencies will be installed automatically if not found during installation. 
 If you choose to use this option, I would still recommend you to read the whole thing to understand what's happening. After you've read it, you can just clone this repo by 
 ```shell
 $ git clone https://github.com/alvi2496/pyenvilder.git ~/pyenvilder
